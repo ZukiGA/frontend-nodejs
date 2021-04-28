@@ -1,4 +1,4 @@
-const url="http://35.223.20.167:8103/api/users";
+const url="http://localhost:8103/api/users";
 
 function postUser() {
     console.log(url);
@@ -22,7 +22,8 @@ function postUser() {
         mode: 'cors',
         headers: {
             'Content-Type': 'multipart/form-data',
-            'Accept': 'application/json'
+            'Accept': 'application/json',
+            'Access-Control-Allow-Origin': '*'
         }
     }
     fetch(url, options)
