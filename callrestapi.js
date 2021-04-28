@@ -1,4 +1,4 @@
-const url="http://localhost:8103/api/users";
+const url="http://35.223.20.167:8103/api/users";
 
 function postUser() {
     console.log(url);
