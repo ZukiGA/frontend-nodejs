@@ -16,19 +16,18 @@ function postUser() {
     }
 
     console.log(myUser);
-    const options = {
-        method: 'POST',
-        body: JSON.stringify(myUser),
-        mode: 'cors',
-        headers: {
-            'Content-Type': 'multipart/form-data',
-            'Accept': 'application/json',
-            'Access-Control-Allow-Origin': '*'
-        }
-    }
-    fetch(url, options)
-    .then(res => res.json())
-    .then(res => console.log(res));
+
+    $.ajax({
+        url: url,
+        type: 'post',
+        dataType: 'json',
+        contentType: 'application/json',
+        success: function (data) {
+            console.log(data);
+            $('#resultado').html(JSON.stringify(data.user));
+        },
+        data: JSON.stringify(myUser)
+    });
 
 }
 
